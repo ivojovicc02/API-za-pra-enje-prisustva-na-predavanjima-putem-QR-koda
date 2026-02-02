@@ -10,6 +10,8 @@ import com.example.attendance.repository.AttendanceRepository;
 import com.example.attendance.repository.LectureSessionRepository;
 import com.example.attendance.repository.StudentRepository;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AttendanceServiceImpl implements AttendanceService {
@@ -17,6 +19,31 @@ public class AttendanceServiceImpl implements AttendanceService {
     private final StudentRepository studentRepository;
     private final LectureSessionRepository lectureSessionRepository;
     private final AttendanceRepository attendanceRepository;
+
+    @Override
+    public Attendance create(Attendance a) {
+        return null;
+    }
+
+    @Override
+    public List<Attendance> getAll() {
+        return null;
+    }
+
+    @Override
+    public Attendance getById(Long id) {
+        return null;
+    }
+
+    @Override
+    public Attendance update(Long id, Attendance a) {
+        return null;
+    }
+
+    @Override
+    public void delete(Long id) {
+
+    }
 
     @Override
     public void scan(Long studentId, String qrToken) {
