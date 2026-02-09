@@ -60,4 +60,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
         attendanceRepository.save(attendance);
     }
+
+    @Override
+    public List<Attendance> getBySession(Long sessionId) {
+        return null;
+    }
 }

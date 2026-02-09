@@ -11,5 +11,7 @@ public interface AttendanceService {
     Attendance update(Long id, Attendance a);
     void delete(Long id);
     void scan(Long studentId, String qrToken);
+
+    List<Attendance> getBySession(Long sessionId);
 }
 
