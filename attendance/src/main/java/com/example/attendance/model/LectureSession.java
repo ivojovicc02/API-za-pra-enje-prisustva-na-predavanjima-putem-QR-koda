@@ -1,13 +1,16 @@
 package com.example.attendance.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Data
-
+@Getter
+@Setter
 public class LectureSession {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,9 +18,12 @@ public class LectureSession {
     @ManyToOne
     private Lecture lecture;
 
+    @Column(unique = true, nullable = false)
     private String qrToken;
 
     private LocalDateTime startTime;
+
     private LocalDateTime endTime;
+
     private LocalDateTime qrExpiresAt;
 }

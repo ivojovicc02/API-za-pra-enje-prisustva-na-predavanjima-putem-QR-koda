@@ -12,20 +12,9 @@ public class AttendanceController {
 
     private final AttendanceService attendanceService;
 
-    // 👤 USER – skenira QR kod
-    @PreAuthorize("hasRole('USER')")
     @PostMapping("/scan")
-    public void scan(
-            @RequestParam Long studentId,
-            @RequestParam String qrToken
-    ) {
-        attendanceService.scan(studentId, qrToken);
+    public void scan(@RequestParam String qrToken) {
+        attendanceService.scan(qrToken);
     }
 
-    // 👑 ADMIN – vidi sve evidencije (primjer)
-    @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/all")
-    public Object getAll() {
-        return attendanceService.getAll();
-    }
 }

@@ -7,20 +7,11 @@ import java.util.Optional;
 
 public interface LectureSessionService {
 
-    LectureSession create(LectureSession lectureSession);
-
-    LectureSession create(Long lectureSession);
-
-    LectureSession update(Long id, LectureSession lectureSession);
-
-    void delete(Long id);
-
-    LectureSession getById(Long id);
-
-    List<LectureSession> getAll();
-
-    // 👇 bitno za QR
-    Optional<LectureSession> getByQrToken(String qrToken);
+    LectureSession create(Long lectureId);
 
     LectureSession findById(Long id);
+
+    Optional<LectureSession> getByQrToken(String qrToken);
 }
+
+

@@ -6,6 +6,8 @@ import com.example.attendance.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
-    boolean existsByStudentAndSession(Student student, LectureSession session);
+
+
+    boolean existsByStudentAndLectureSession(Student student, LectureSession session);
 }
 

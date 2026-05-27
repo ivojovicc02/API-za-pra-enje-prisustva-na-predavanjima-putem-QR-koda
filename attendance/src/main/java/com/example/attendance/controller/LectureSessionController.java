@@ -13,13 +13,14 @@ public class LectureSessionController {
 
     private final LectureSessionService lectureSessionService;
 
-    // 👑 ADMIN – pokreće predavanje
+    // 👑 ADMIN – pokreće predavanje (generira QR)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public LectureSession create(@RequestParam Long lectureId) {
         return lectureSessionService.create(lectureId);
     }
 
-    // 👤 USER + 👑 ADMIN
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/{id}")
     public LectureSession findById(@PathVariable Long id) {
         return lectureSessionService.findById(id);
